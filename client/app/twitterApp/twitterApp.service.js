@@ -50,6 +50,26 @@ angular.module('buySellInfluenceApp')
         });
         //return the promise of the deferred object
         return deferred.promise;
+    },
+    getStatuses: function () {
+        //create a deferred object using Angular's $q service
+        var deferred = $q.defer();
+        var promise = authorizationResult.get('/1.1/statuses/user_timeline.json').done(function(data) { //https://api.twitter.com/1.1/statuses/user_timeline.json
+            //when the data is retrieved resolved the deferred object
+            deferred.resolve(data)
+        });
+        //return the promise of the deferred object
+        return deferred.promise;
+    },
+    getCredentials: function () {
+        //create a deferred object using Angular's $q service
+        var deferred = $q.defer();
+        var promise = authorizationResult.get('/1.1/account/verify_credentials.json').done(function(data) { //https://api.twitter.com/1.1/account/verify_credentials.json
+            //when the data is retrieved resolved the deferred object
+            deferred.resolve(data)
+        });
+        //return the promise of the deferred object
+        return deferred.promise;
     }
   }
 
