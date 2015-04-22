@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('buySellInfluenceApp')
-  .controller('LoginCtrl', function ($scope, $q, twitterApp) {
+  .controller('LoginCtrl', function ($scope, $q, twitterApp, currentUser) {
     $scope.tweets = []; //array of tweets
     $scope.followers = [];
-    $scope.isLoggedIn = false;
+    $scope.isLoggedIn = currentUser.isLoggedIn;
 
-    twitterApp.initialize();
+    //twitterApp.initialize();
 
     //using the OAuth authorization result get the latest 20 tweets from twitter for the user
     $scope.refreshTimeline = function() {
