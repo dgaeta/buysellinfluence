@@ -8,14 +8,14 @@ describe('Controller: SignupCtrl', function () {
   var SignupCtrl, scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $http) {
     scope = $rootScope.$new();
     SignupCtrl = $controller('SignupCtrl', {
       $scope: scope
     });
   }));
 
-  it('should ...', function () {
-    expect(1).toEqual(1);
+  it('should create a buyer user correctly', function () {
+    //
   });
 });

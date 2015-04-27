@@ -14,11 +14,13 @@ angular.module('buySellInfluenceApp')
     twitterApp.initialize();
 
     var setBuyer = function(){
+    	console.log("in user setting buyer");
     	buyer = true;
     	seller = false;
     }
 
     var setSeller = function(){
+    	console.log("in user setting seller");
     	buyer = false;
     	seller = true;
     }
@@ -31,7 +33,12 @@ angular.module('buySellInfluenceApp')
             	console.log("hello");
                 //if the authorization is successful, hide the connect button and display the tweets
                 isLoggedIn = true;
-                $state.go('dashboard');
+                if (seller) {
+                	$state.go('buyerProfile');
+                } else {
+                	$state.go('dashboard');
+                }
+                
             }
         });
     }
