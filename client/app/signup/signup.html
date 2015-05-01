@@ -1,7 +1,7 @@
 <div ng-controller="SignupCtrl">
+<div class="signup">
 
-
-	<h2>Which type of user are you?</h2>
+	<h1>Which type of user are you?</h2>
 	<label class="radio-inline">
 	  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" ng-change='setBuyer()' ng-model="buyer"> Buyer
 	</label>
@@ -9,9 +9,9 @@
 	  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" ng-change='setSeller()' ng-model="seller"> Seller
 	</label>
 
-	<div ng-show="buyer">
+	<div ng-show="buyer" class="login">
 		<form class="form-horizontal">
-			 <h1>Connect with Twitter</h1>
+			 <h3>Connect with Twitter</h1>
 		  <div class="row">
 		      <div class="col-xs-12">
 			      <button ng-click="getUsers()" id="connectButton" type="button" class="btn btn-primary">Get Users</button>
@@ -21,7 +21,7 @@
 		      </div>
 		  </div>
 		  <br>
-		  <h2>OR</h2>
+		  <h3>OR</h2>
 		  <br>
 		  <div class="form-group">
 		    <label for="name" class="col-sm-2 control-label">Name</label>
@@ -59,12 +59,14 @@
 	</div>
 
 	<div ng-show="seller">
-	   <h1>Connect with Twitter</h1>
+	   <h3>Connect with Twitter</h1>
 	  <div class="row">
 	      <div class="col-xs-12">
-	          <button ng-hide="isLoggedIn" ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
+	          <button ng-hide="isLoggedIn" ng-click="createTwitterUser()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
 	          <button ng-hide="!isLoggedIn" ng-click="signOut()" id="signOut" type="button" class="btn btn-link" >Sign Out</button>
 	      </div>
 	  </div>
 	</div>
+
+</div>
 </div>

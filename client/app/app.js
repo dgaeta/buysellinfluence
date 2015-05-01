@@ -6,6 +6,7 @@ angular.module('buySellInfluenceApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap', 
+  'door3.css'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider

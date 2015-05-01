@@ -6,6 +6,7 @@ angular.module('buySellInfluenceApp')
       .state('signup', {
         url: '/signup',
         templateUrl: 'app/signup/signup.html',
-        controller: 'SignupCtrl'
+        controller: 'SignupCtrl', 
+        css: 'app/signup/signup.css'
       });
   });

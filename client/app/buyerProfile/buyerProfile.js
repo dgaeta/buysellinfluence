@@ -6,6 +6,7 @@ angular.module('buySellInfluenceApp')
       .state('buyerProfile', {
         url: '/buyerProfile',
         templateUrl: 'app/buyerProfile/buyerProfile.html',
-        controller: 'BuyerProfileCtrl'
+        controller: 'BuyerProfileCtrl',
+        css: 'app/buyerProfile/buyerProfile.css'
       });
   });
