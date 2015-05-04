@@ -6,7 +6,7 @@ angular.module('buySellInfluenceApp')
       .state('main', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl',
-        css: 'app/main/main.css'
+        controller: 'MainCtrl'
+        //css: 'app/main/main.css'
       });
   });

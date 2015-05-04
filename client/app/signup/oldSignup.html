@@ -1,0 +1,37 @@
+
+<div ng-controller="SignupCtrl">
+<div class="signup">
+
+	<h1 class="md-display-3">Which type of user are you?</h2>
+
+	<div layout="row" layout-align="center center">
+		<div>Buyer</div>
+		<md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5" ng-model="buyer" ng-click="buyer = !buyer">
+		<div>Seller</div>
+		</div>
+	
+  	</md-switch>
+
+	<div ng-show="buyer" class="login">
+		<form class="form-horizontal">
+			 
+		  <div class="row">
+		      <div class="col-xs-12">
+		          <a href="/dashboard"><md-button class="md-accent md-raised md-hue-1" ng-hide="isLoggedIn" type="button" class="btn btn-primary">Go To Platform</md-button></a>
+		          <md-button ng-hide="!isLoggedIn" ng-click="signOut()" id="signOut" type="button" class="btn btn-link" >Sign Out</md-button>
+		      </div>
+		  </div> 
+	</div>
+
+	<div ng-show="!buyer">
+	   <h3>Connect with Twitter</h1>
+	  <div class="row">
+	      <div class="col-xs-12">
+	          <md-button ng-hide="isLoggedIn" ng-click="createTwitterUser()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</md-button>
+	          <md-button ng-hide="!isLoggedIn" ng-click="signOut()" id="signOut" type="button" class="btn btn-link" >Sign Out</md-button>
+	      </div>
+	  </div>
+	</div>
+
+</div>
+</div>

@@ -6,6 +6,7 @@ angular.module('buySellInfluenceApp')
       .state('dashboard', {
         url: '/dashboard',
         templateUrl: 'app/dashboard/dashboard.html',
-        controller: 'DashboardCtrl'
+        controller: 'DashboardCtrl', 
+        css: 'app/dashboard/dashboard.css'
       });
   });

@@ -4,6 +4,9 @@ angular.module('buySellInfluenceApp')
   .controller('SignupCtrl', function ($scope, $state, $http, $q, twitterApp, currentUser, myDataRef) {
     $scope.buyer = false;
     $scope.seller = false;
+
+    $scope.userTypeModel = null;
+
     $scope.isLoggedIn = currentUser.isLoggedIn;
 
 
@@ -40,7 +43,7 @@ angular.module('buySellInfluenceApp')
     }
 
     $scope.createTwitterUser = function() {
-         "";
+      
 
         twitterApp.connectTwitter().then( function (){
             if (twitterApp.isReady()) {

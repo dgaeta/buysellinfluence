@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('buySellInfluenceApp')
-  .service('currentUser', function (twitterApp, $state, $q) {
+  .service('currentUser', function (twitterApp, $state, $q, myDataRef) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var myUserService = {};
     var name = "";
@@ -81,6 +81,7 @@ angular.module('buySellInfluenceApp')
         return true;
     }
 
+
     //if the user is a returning user, hide the sign in button and display the tweets
     if (twitterApp.isReady()) {
         isLoggedIn = true;
@@ -90,6 +91,7 @@ angular.module('buySellInfluenceApp')
     }
 
     return{
+        name: name,
     	signOut: signOut,
     	isLoggedIn: isLoggedIn,
     	setBuyer: setBuyer,

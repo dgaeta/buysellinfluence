@@ -1,74 +1,24 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
 
-<!-- Custom CSS -->
-<!--<link href="css/simple-sidebar.css" rel="stylesheet">-->
+<div ng-controller="BuyerProfileCtrl">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h2>Welcome back, {{name}}?</h2>
+			 <accordion close-others="{{true}}">
+		    <accordion-group heading="Your Info" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled" >
+		    <p>{{buyer.bio}}</p>
+		    <p>{{buyer.location}}</p>
+		    </accordion-group>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+		    <accordion-group heading="Messages">
+	      	<p>No messages</p>
+	      	</accordion-group>
 
+	      	<accordion-group heading="Payments">
+	      		<p>Payments to be made: {{payment_total}}</p>
+	      		<button class="btn btn-primary">Make a Payment</button>
+	      	</accordion-group>
 
-
-
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    BuySell Influence
-                </a>
-            </li>
-            <li>
-                <a href="#">Offers</a>
-            </li>
-            <li>
-                <a href="#">My Champaigns</a>
-            </li>
-            <li>
-                <a href="#">History</a>
-            </li>
-            <li>
-                <a href="#">Browse Other Influencers</a>
-            </li>
-            <li>
-                <a href="#">Tips</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Hi! This is your Seller Profile.</h1>
-                    <p>This is where you can view your offers, current champaigns that you should fulfil and other nice things  we have provided for you.</p>
-                    <p>Can't wait to see the your influence take off!</p>
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-
+		</div>
+	</div>
 </div>
-<!-- /#wrapper -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Menu Toggle Script -->
-<script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
-</script>

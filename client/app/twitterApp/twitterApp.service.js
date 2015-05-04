@@ -5,6 +5,7 @@ angular.module('buySellInfluenceApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
 	var authorizationResult = false;
 
+
   return {
     initialize: function() {
         //initialize OAuth.io with public key of the application

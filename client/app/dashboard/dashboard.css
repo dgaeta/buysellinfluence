@@ -1,0 +1,12 @@
+.carddemoBasicUsage md-card {
+  min-height: 150px; }
+
+img.md-card-image {
+	height: 50px;
+	width: 50px
+}
+
+img.image-responseive {
+	height: 50px;
+	width: 50px
+}

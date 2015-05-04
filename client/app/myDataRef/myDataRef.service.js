@@ -9,10 +9,24 @@ angular.module('buySellInfluenceApp')
 
     var sellersRef = myDataRef.child("sellers");
 
+    var buyersRef = myDataRef.child("buyers");
+
+
+    //  var getSellers = function(){
+    //     sellersRef.on("value", function(snapshot) {
+    //         sellers = snapshot.val();
+    //         console.log(sellers);
+    //     }, function (errorObject) {
+    //       console.log("The read failed: " + errorObject.code);
+    //     });
+    // } 
+
+
     return {
     	myDataRef: myDataRef,
     	usersRef: usersRef,
-    	sellersRef: sellersRef
+    	sellersRef: sellersRef,
+        buyersRef: buyersRef
     };
 
   });

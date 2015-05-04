@@ -5,12 +5,15 @@ angular.module('buySellInfluenceApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap', 
-  'door3.css'
+  'ui.bootstrap'
+  // 'door3.css',
+  // 'ngMaterial'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
+
+    // $mdThemingProvider.theme('green');
   });

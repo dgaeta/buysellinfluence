@@ -1,72 +1,27 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+
 <div ng-controller="SignupCtrl">
-<div class="signup">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+		<h2>What kind of user are you?</h2>
+			 <accordion close-others="{{true}}">
+		    <accordion-group heading="Buyer" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled" >
+		      <button ng-hide="isLoggedIn" type="button" class="btn btn-primary" ng-click="createTwitterBuyer()">
+        		Connect Twitter
+    			</button>
+    			<button ng-hide="!isLoggedIn" ng-click="signOut()" id="signOut" type="button" class="btn btn-link" >Sign Out</button>
+		    </accordion-group>
 
-	<h1>Which type of user are you?</h2>
-	<label class="radio-inline">
-	  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" ng-change='setBuyer()' ng-model="buyer"> Buyer
-	</label>
-	<label class="radio-inline">
-	  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" ng-change='setSeller()' ng-model="seller"> Seller
-	</label>
+		    <accordion-group heading="Seller">
+	      	<button ng-hide="isLoggedIn" type="button" class="btn btn-primary" ng-click="createTwitterUser()">
+        		Connect Twitter
+    			</button>
+    			<button ng-hide="!isLoggedIn" ng-click="signout()" id="signOut" type="button" class="btn btn-link" >Sign Out</button>
+	      </accordion-group>
 
-	<div ng-show="buyer" class="login">
-		<form class="form-horizontal">
-			 <h3>Connect with Twitter</h1>
-		  <div class="row">
-		      <div class="col-xs-12">
-			      <button ng-click="getUsers()" id="connectButton" type="button" class="btn btn-primary">Get Users</button>
-		      		<button ng-click="createUser()" id="connectButton" type="button" class="btn btn-primary">Create User</button>
-		          <button ng-hide="isLoggedIn" ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
-		          <button ng-hide="!isLoggedIn" ng-click="signOut()" id="signOut" type="button" class="btn btn-link" >Sign Out</button>
-		      </div>
-		  </div>
-		  <br>
-		  <h3>OR</h2>
-		  <br>
-		  <div class="form-group">
-		    <label for="name" class="col-sm-2 control-label">Name</label>
-		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="name" placeholder="Your Name">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-		    <div class="col-sm-10">
-		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-		    <div class="col-sm-10">
-		      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <div class="checkbox">
-		        <label>
-		          <input type="checkbox"> Remember me
-		        </label>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="submit" class="btn btn-default">Sign in</button>
-		    </div>
-		  </div>
-		</form>
+		</div>
 	</div>
 
-	<div ng-show="seller">
-	   <h3>Connect with Twitter</h1>
-	  <div class="row">
-	      <div class="col-xs-12">
-	          <button ng-hide="isLoggedIn" ng-click="createTwitterUser()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
-	          <button ng-hide="!isLoggedIn" ng-click="signOut()" id="signOut" type="button" class="btn btn-link" >Sign Out</button>
-	      </div>
-	  </div>
-	</div>
-
-</div>
 </div>
